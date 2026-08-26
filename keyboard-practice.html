@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keyboard Practice</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+    .intro {
+      font-size: 1.3rem;
+      margin-bottom: 28px;
+    }
+    .card {
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 14px;
+      padding: 24px;
+      margin: 22px 0;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.7rem;
+    }
+    .prompt {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+    input, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 1.35rem;
+      padding: 14px;
+      border: 2px solid #777;
+      border-radius: 8px;
+      background: #fff;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .example {
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: #f1f1f1;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin: 10px 0 14px;
+    }
+    .tip {
+      font-size: 1.08rem;
+      margin-top: 10px;
+    }
+    .reset-wrap {
+      text-align: center;
+      margin-top: 34px;
+    }
+    button {
+      font-size: 1.25rem;
+      padding: 12px 22px;
+      border: 2px solid #555;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Keyboard Practice</h1>
+    <p class="intro">Follow along with your instructor. Type in each box.</p>
+
+    <section class="card">
+      <h2>1. Type Your Name</h2>
+      <p class="prompt">Click in the box. Type your first name.</p>
+      <input type="text" aria-label="Type your first name" />
+    </section>
+
+    <section class="card">
+      <h2>2. Use the Space Bar</h2>
+      <p class="prompt">Type your first and last name. Press the space bar between the names.</p>
+      <input type="text" aria-label="Type your first and last name" />
+    </section>
+
+    <section class="card">
+      <h2>3. Make a Capital Letter</h2>
+      <p class="prompt">Hold down the Shift key and press a letter.</p>
+      <div class="example">My name is Maria.</div>
+      <input type="text" aria-label="Practice capital letters" />
+    </section>
+
+    <section class="card">
+      <h2>4. Use Backspace</h2>
+      <p class="prompt">Type the word below. Make one mistake on purpose. Then use Backspace to fix it.</p>
+      <div class="example">computer</div>
+      <input type="text" aria-label="Practice backspace" />
+    </section>
+
+    <section class="card">
+      <h2>5. Press Enter</h2>
+      <p class="prompt">Type your first name. Press Enter. Then type your last name.</p>
+      <textarea aria-label="Practice pressing Enter"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>6. Type a Sentence</h2>
+      <p class="prompt">Type the sentence below.</p>
+      <div class="example">I am learning how to use a Chromebook.</div>
+      <textarea aria-label="Type a practice sentence"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>7. Highlight Text</h2>
+      <p class="prompt">Type the sentence below. Then highlight the word <strong>Chromebook</strong>.</p>
+      <div class="example">I am using a Chromebook.</div>
+      <textarea aria-label="Practice highlighting text"></textarea>
+      <p class="tip">Use the touchpad to drag across the word.</p>
+    </section>
+
+    <section class="card">
+      <h2>8. Copy and Paste</h2>
+      <p class="prompt">Type your name in the first box. Highlight it and copy it. Then paste it into the second box.</p>
+      <input type="text" aria-label="Type your name to copy" />
+      <div style="height:12px"></div>
+      <input type="text" aria-label="Paste your name here" />
+      <p class="tip">Copy: Ctrl + C &nbsp;&nbsp;&nbsp; Paste: Ctrl + V</p>
+    </section>
+
+    <div class="reset-wrap">
+      <button type="button" onclick="resetPage()">Start Over</button>
+    </div>
+  </main>
+
+  <script>
+    function resetPage() {
+      document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
