@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Touchpad Practice</title>
+<style>
+  :root {
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #5b6472;
+    --border: #d9e0e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+  }
+  header {
+    padding: 28px 24px 10px;
+    text-align: center;
+  }
+  h1 { font-size: 38px; margin: 0 0 8px; }
+  h2 { font-size: 30px; margin: 0 0 10px; }
+  p { font-size: 22px; margin: 8px 0 16px; }
+  .small { font-size: 18px; color: var(--muted); }
+  .section {
+    min-height: 95vh;
+    padding: 34px 24px;
+    border-top: 2px solid var(--border);
+  }
+  .card {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.05);
+  }
+  .objects {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+  }
+  .object {
+    min-height: 150px;
+    border: 3px solid var(--border);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 74px;
+    background: white;
+  }
+  .label {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+  button {
+    font-size: 28px;
+    padding: 28px 18px;
+    min-height: 105px;
+    border-radius: 16px;
+    border: 3px solid #9aa7b4;
+    background: white;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  button:focus { outline: 5px solid #222; outline-offset: 3px; }
+  .feedback {
+    min-height: 58px;
+    margin-top: 24px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: #eef3f8;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .spacer {
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 22px;
+    text-align: center;
+    padding: 20px;
+  }
+  .big-find {
+    text-align: center;
+    font-size: 110px;
+    margin: 18px 0;
+  }
+  .success {
+    background: #edf7ee;
+    border: 3px solid #91b596;
+  }
+  .challenge {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .challenge button {
+    font-size: 80px;
+    min-height: 170px;
+    width: 100%;
+  }
+  .footer-note {
+    max-width: 1050px;
+    margin: 20px auto 50px;
+    padding: 0 24px;
+    font-size: 17px;
+    color: var(--muted);
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .objects { grid-template-columns: repeat(2, 1fr); }
+    .btn-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Touchpad Practice</h1>
+  <p>Practice moving, pointing, clicking, and scrolling.</p>
+  <p class="small">Take your time. Accuracy matters more than speed.</p>
+</header>
+
+<section class="section">
+  <div class="card">
+    <h2>1. Scroll Down</h2>
+    <p>Use two fingers on the touchpad. Slide them down.</p>
+    <p><strong>Your goal:</strong> Go down the page and find the yellow duck.</p>
+  </div>
+
+  <div class="spacer">Keep scrolling. The duck is farther down.</div>
+  <div class="spacer">You are doing it. Keep going.</div>
+
+  <div class="card success">
+    <div class="big-find">🦆</div>
+    <h2 style="text-align:center;">You found the duck!</h2>
+    <p style="text-align:center;">Now try scrolling back up a little, then down again.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>2. Move and Point</h2>
+    <p>Use one finger to move and point. Move the pointer to each object. <strong>Do not click yet.</strong></p>
+    <div class="objects">
+      <div><div class="object">🐶</div><div class="label">Dog</div></div>
+      <div><div class="object">🚲</div><div class="label">Bicycle</div></div>
+      <div><div class="object">🌻</div><div class="label">Flower</div></div>
+      <div><div class="object">⛵</div><div class="label">Boat</div></div>
+      <div><div class="object">🍎</div><div class="label">Apple</div></div>
+      <div><div class="object">🎈</div><div class="label">Balloon</div></div>
+    </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>3. Click</h2>
+    <p>Click means to press down on the touchpad. Use one finger.</p>
+    <div class="btn-grid">
+      <button onclick="showFeedback('Great! You clicked DOG.')">🐶 DOG</button>
+      <button onclick="showFeedback('Great! You clicked FLOWER.')">🌻 FLOWER</button>
+      <button onclick="showFeedback('Great! You clicked BICYCLE.')">🚲 BICYCLE</button>
+      <button onclick="showFeedback('Great! You clicked BOAT.')">⛵ BOAT</button>
+    </div>
+    <div id="clickFeedback" class="feedback">Your message will appear here.</div>
+    <p><strong>Remember:</strong> Move → Stop → Click</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card challenge">
+    <h2>4. Right-Click</h2>
+    <p>Put two fingers on the touchpad and tap once.</p>
+    <p><strong>Your goal:</strong> Right-click the camera.</p>
+    <button id="cameraTarget" aria-label="Camera">📷</button>
+    <div id="rightClickFeedback" class="feedback">Right-click the camera.</div>
+    <p class="small">Tip: A two-finger tap on a Chromebook is a right-click.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card challenge">
+    <h2>5. Scroll and Click</h2>
+    <p>Scroll down until you find the red balloon. Then click it once.</p>
+  </div>
+
+  <div class="spacer">The balloon is not here yet.</div>
+  <div class="spacer">Keep scrolling down.</div>
+
+  <div class="card challenge">
+    <button onclick="balloonSuccess()" aria-label="Red balloon">🎈</button>
+    <div id="balloonFeedback" class="feedback">Click the balloon.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>6. Highlight Text</h2>
+    <p>Highlighting means selecting words with the touchpad.</p>
+    <p><strong>Your goal:</strong> Highlight the words <strong>practice makes progress</strong> in the sentence below.</p>
+    <p><strong>How:</strong></p>
+    <p>1. Move the pointer to the beginning of the word <strong>practice</strong>.</p>
+    <p>2. Press down on the touchpad with one finger and <strong>keep holding</strong>.</p>
+    <p>3. While holding, move your other finger across the words <strong>practice makes progress</strong>.</p>
+    <p>4. Let go when the words are highlighted.</p>
+
+    <div style="font-size:30px; line-height:1.7; padding:28px; margin:26px 0; border:3px solid var(--border); border-radius:16px; background:white; user-select:text;">
+      Learning new computer skills takes time, and practice makes progress every day.
+    </div>
+
+    <p class="small">If you highlight too much or too little, click once in a blank area and try again.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>7. Final Practice</h2>
+    <p>Complete these in order:</p>
+    <p>1. Point to the star without clicking it.</p>
+    <div class="object" style="max-width:260px;margin:20px auto;">⭐</div>
+    <p>2. Scroll farther down.</p>
+  </div>
+
+  <div class="spacer">Keep scrolling.</div>
+
+  <div class="card challenge">
+    <p>3. Click the green check mark.</p>
+    <button onclick="finalSuccess()" aria-label="Green check mark">✅</button>
+    <div id="finalFeedback" class="feedback">Click the check mark when you are ready.</div>
+  </div>
+</section>
+
+<div class="footer-note">
+  Touchpad Practice — designed for beginning Chromebook users. No sound or internet connection is required once this file is saved.
+</div>
+
+<script>
+function showFeedback(message) {
+  document.getElementById('clickFeedback').textContent = message;
+}
+const cameraTarget = document.getElementById('cameraTarget');
+cameraTarget.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+  document.getElementById('rightClickFeedback').textContent = 'Great! You right-clicked the camera.';
+});
+
+function balloonSuccess() {
+  document.getElementById('balloonFeedback').textContent = 'Excellent! You scrolled and clicked the balloon.';
+}
+function finalSuccess() {
+  document.getElementById('clickFeedback').textContent = 'Your message will appear here.';
+  document.getElementById('rightClickFeedback').textContent = 'Right-click the camera.';
+  document.getElementById('balloonFeedback').textContent = 'Click the balloon.';
+  document.getElementById('finalFeedback').textContent = 'Click the check mark when you are ready.';
+  window.getSelection().removeAllRanges();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
