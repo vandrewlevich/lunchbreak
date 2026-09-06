@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mystery Box</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f1e8;margin:0;color:#222;text-align:center}main{max-width:700px;margin:40px auto;padding:30px;background:white;border-radius:18px;box-shadow:0 3px 14px #0002}h1{font-size:2.2rem}p{font-size:1.25rem;line-height:1.5}.box{font-size:6rem;margin:20px}.choices{display:grid;gap:14px;max-width:460px;margin:25px auto}button{font-size:1.2rem;padding:15px;border:2px solid #333;border-radius:12px;background:#fff;cursor:pointer}button:hover{background:#eee}#message{min-height:70px;font-weight:bold;font-size:1.35rem}.small{font-size:.95rem;color:#555;margin-top:35px}</style>
+</head>
+<body>
+<main>
+<h1>🔎 The Mystery Box</h1>
+<p>A mysterious box has appeared. You may open it only if you solve three clues.</p>
+<div class="box" id="box">📦</div>
+<div id="game"></div>
+<div id="message"></div>
+<p class="small">No account needed. Just solve the clues and open the Mystery Box!</p>
+</main>
+<script>
+const rounds=[
+ {q:'Clue 1: Which key usually makes a space between words?',a:['Enter','Space bar','Shift'],correct:1,ok:'Correct! The box rattles...'},
+ {q:'Clue 2: If a menu or little box opens and you do not want to choose anything, what can you try?',a:['Click a blank space on the screen','Turn off the Chromebook','Press every key'],correct:0,ok:'Correct! Clicking a blank space can be a useful escape route. Something inside the box is glowing...'},
+ {q:'Clue 3: Which one is a web browser?',a:['Chrome','Calculator','Camera'],correct:0,ok:'Correct! The box is opening!'}
+];
+let i=0;
+function show(){
+ const g=document.getElementById('game'),m=document.getElementById('message'); m.textContent='';
+ if(i>=rounds.length){document.getElementById('box').textContent='🎉';g.innerHTML='<h2>Mystery solved!</h2><p>You solved all three clues and opened the Mystery Box!</p><button onclick="location.reload()">Play Again</button>';return;}
+ const r=rounds[i];g.innerHTML='<h2>'+r.q+'</h2><div class="choices">'+r.a.map((x,n)=>`<button onclick="answer(${n})">${x}</button>`).join('')+'</div>';
+}
+function answer(n){const r=rounds[i],m=document.getElementById('message');if(n===r.correct){m.textContent=r.ok;i++;setTimeout(show,900)}else{m.textContent='Not quite. Try another answer.'}}
+show();
+</script>
+</body>
+</html>
