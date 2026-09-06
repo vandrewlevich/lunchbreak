@@ -14,18 +14,18 @@ body{font-family:Arial,sans-serif;background:#f4f1e8;margin:0;color:#222;text-al
 <div class="box" id="box">📦</div>
 <div id="game"></div>
 <div id="message"></div>
-<p class="small">No account needed. This game works from the file you downloaded.</p>
+<p class="small">No account needed. Just solve the clues and open the Mystery Box!</p>
 </main>
 <script>
 const rounds=[
  {q:'Clue 1: Which key usually makes a space between words?',a:['Enter','Space bar','Shift'],correct:1,ok:'Correct! The box rattles...'},
- {q:'Clue 2: You accidentally closed a Chrome tab. Which shortcut can bring it back?',a:['Ctrl + Shift + T','Ctrl + P','Ctrl + A'],correct:0,ok:'Correct! Something inside the box is glowing...'},
+ {q:'Clue 2: What does the Back arrow in Chrome usually do?',a:['Takes you to the previous page','Turns off the Chromebook','Deletes the page'],correct:0,ok:'Correct! Something inside the box is glowing...'},
  {q:'Clue 3: Which one is a web browser?',a:['Chrome','Calculator','Camera'],correct:0,ok:'Correct! The box is opening!'}
 ];
 let i=0;
 function show(){
  const g=document.getElementById('game'),m=document.getElementById('message'); m.textContent='';
- if(i>=rounds.length){document.getElementById('box').textContent='🎉';g.innerHTML='<h2>Mystery solved!</h2><p>You downloaded a file, found it, opened it, and completed the game.</p><button onclick="location.reload()">Play Again</button>';return;}
+ if(i>=rounds.length){document.getElementById('box').textContent='🎉';g.innerHTML='<h2>Mystery solved!</h2><p>You solved all three clues and opened the Mystery Box!</p><button onclick="location.reload()">Play Again</button>';return;}
  const r=rounds[i];g.innerHTML='<h2>'+r.q+'</h2><div class="choices">'+r.a.map((x,n)=>`<button onclick="answer(${n})">${x}</button>`).join('')+'</div>';
 }
 function answer(n){const r=rounds[i],m=document.getElementById('message');if(n===r.correct){m.textContent=r.ok;i++;setTimeout(show,900)}else{m.textContent='Not quite. Try another answer.'}}
