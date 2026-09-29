@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mystery Box</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f1e8;margin:0;color:#222;text-align:center}main{max-width:700px;margin:40px auto;padding:30px;background:white;border-radius:18px;box-shadow:0 3px 14px #0002}h1{font-size:2.2rem}p{font-size:1.25rem;line-height:1.5}.box{font-size:6rem;margin:20px}.choices{display:grid;gap:14px;max-width:460px;margin:25px auto}button{font-size:1.2rem;padding:15px;border:2px solid #333;border-radius:12px;background:#fff;cursor:pointer}button:hover{background:#eee}#message{min-height:70px;font-weight:bold;font-size:1.35rem}.small{font-size:.95rem;color:#555;margin-top:35px}</style>
+</head>
+<body>
+<main>
+<h1>🔎 The Mystery Box</h1>
+<p>A mysterious box has appeared. You may open it only if you solve eight clues.</p>
+<div class="box" id="box">📦</div>
+<div id="game"></div>
+<div id="message"></div>
+<p class="small">No account needed. Just solve the clues and open the Mystery Box!</p>
+</main>
+<script>
+const rounds=[
+ {q:'Clue 1: Which key usually makes a space between words?',a:['Enter','Space bar','Shift'],correct:1,ok:'Correct! The box rattles...'},
+ {q:'Clue 2: If a menu or little box opens and you do not want to choose anything, what can you try?',a:['Click a blank space on the screen','Turn off the Chromebook','Press every key'],correct:0,ok:'Correct! Clicking a blank space can be a useful escape route. Something inside the box is glowing...'},
+ {q:'Clue 3: Which one is a web browser?',a:['Chrome','Calculator','Camera'],correct:0,ok:'Correct! Chrome is a web browser. The box gives a little shake...'},
+ {q:'Clue 4: What is a passphrase?',a:['Your email address','Several words used together as a password','The name of a website'],correct:1,ok:'Correct! A passphrase uses several words together as a password. Another lock clicks open...'},
+ {q:'Clue 5: What can you send as an email attachment?',a:['A paper envelope','A touchpad','A photo or document'],correct:2,ok:'Correct! You can attach a photo or document to an email. The box starts to sparkle...'},
+ {q:'Clue 6: What can you do in Google Docs?',a:['Write and edit a document','Change the brightness of your screen','Charge your Chromebook'],correct:0,ok:'Correct! Google Docs lets you write and edit documents. Only one lock remains...'},
+ {q:'Clue 7: What does Ctrl-V do?',a:['Copies selected text','Pastes what you copied or cut','Deletes a document'],correct:1,ok:'Correct! Ctrl-V pastes what you copied or cut. One last lock clicks...'},
+ {q:'Clue 8: What does Ctrl-Z do?',a:['Zooms in on the screen','Undoes your last action','Pastes what you copied'],correct:1,ok:'Correct! Ctrl-Z undoes your last action, such as typing or deleting text. The box is opening!'}
+];
+let i=0,waiting=false;
+function show(){
+ const g=document.getElementById('game'),m=document.getElementById('message'); m.textContent='';waiting=false;
+ if(i>=rounds.length){document.getElementById('box').textContent='🎉';g.innerHTML='<h2>Mystery solved!</h2><p>You solved all eight clues and opened the Mystery Box!</p><button onclick="location.reload()">Play Again</button>';return;}
+ const r=rounds[i];g.innerHTML='<h2>'+r.q+'</h2><div class="choices">'+r.a.map((x,n)=>`<button onclick="answer(${n})">${x}</button>`).join('')+'</div>';
+}
+function answer(n){if(waiting)return;const r=rounds[i],m=document.getElementById('message');if(n===r.correct){waiting=true;document.querySelectorAll('.choices button').forEach(b=>b.disabled=true);m.textContent=r.ok;i++;setTimeout(show,900)}else{m.textContent='Not quite. Try another answer.'}}
+show();
+</script>
+</body>
+</html>
