@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Copy, Cut, and Paste Practice</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f9fc;color:#1f2937;line-height:1.5}
+header{text-align:center;padding:28px 20px 14px}
+h1{font-size:38px;margin:0 0 8px} h2{font-size:30px;margin:0 0 12px}
+p{font-size:22px}
+.section{min-height:94vh;padding:34px 24px;border-top:2px solid #d9e0e8}
+.card{max-width:1000px;margin:auto;background:#fff;border:2px solid #d9e0e8;border-radius:18px;padding:30px;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.method{font-size:20px;font-weight:bold;background:#eef3f8;padding:12px 16px;border-radius:12px;margin-bottom:20px}
+.steps{background:#f4f6f8;border-radius:14px;padding:12px 22px;margin:18px 0}
+.source{font-size:30px;line-height:1.7;padding:24px;margin:22px 0;border:3px solid #cbd5e1;border-radius:14px;background:white;user-select:text}
+textarea{width:100%;min-height:110px;padding:18px;font:26px Arial;border:3px solid #9aa7b4;border-radius:14px;resize:vertical}
+button{width:100%;margin-top:20px;padding:18px;font-size:25px;font-weight:bold;background:white;border:3px solid #9aa7b4;border-radius:14px;cursor:pointer}
+.feedback{margin-top:18px;padding:16px;background:#eef3f8;border-radius:12px;font-size:23px;font-weight:bold;text-align:center;min-height:60px}
+kbd{display:inline-block;border:2px solid #9aa7b4;border-bottom-width:4px;border-radius:7px;background:#fff;padding:2px 9px;font:bold 21px Arial}
+.note{font-size:18px;color:#5b6472}
+</style>
+</head>
+<body>
+<header>
+<h1>Copy, Cut, and Paste Practice</h1>
+<p>You will learn 2 different ways to copy, cut and paste. One will be with the keyboard and one with the right-click menu.  REMEMBER: To use right click, you use 2 fingers and touch the middle of the touchpad.</p>
+</header>
+
+<section class="section"><div class="card">
+<div class="method">Keyboard: Copy and Paste</div>
+<h2>1. Copy One Word</h2>
+<div class="steps"><p>Highlight <b>library</b>.</p><p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p><p>Click in the box.</p><p>Press <kbd>Ctrl</kbd> + <kbd>V</kbd>.</p></div>
+<div id="s1" class="source" contenteditable="true">library</div>
+<textarea id="t1" placeholder="Paste the word here."></textarea>
+<button onclick="check(1,'library')">Check My Work</button><div id="f1" class="feedback">Copy library and paste it into the box.</div>
+</div></section>
+
+<section class="section"><div class="card">
+<div class="method">Keyboard: Copy and Paste</div>
+<h2>2. Copy a Phrase</h2>
+<p>Copy the words <b>computer class</b> and paste them into the box.</p>
+<div id="s2" class="source" contenteditable="true">I enjoy my computer class every week.</div>
+<textarea id="t2" placeholder="Paste the words here."></textarea>
+<button onclick="check(2,'computer class')">Check My Work</button><div id="f2" class="feedback">Use Ctrl + C and Ctrl + V.</div>
+</div></section>
+
+<section class="section"><div class="card">
+<div class="method">Keyboard: Cut and Paste</div>
+<h2>3. Cut One Word</h2>
+<div class="steps"><p>Highlight <b>Tuesday</b>.</p><p>Press <kbd>Ctrl</kbd> + <kbd>X</kbd>.</p><p>Click in the box.</p><p>Press <kbd>Ctrl</kbd> + <kbd>V</kbd>.</p></div>
+<div id="s3" class="source" contenteditable="true">Tuesday</div>
+<textarea id="t3" placeholder="Paste the word here."></textarea>
+<button onclick="check(3,'tuesday')">Check My Work</button><div id="f3" class="feedback">Cut Tuesday and paste it into the box.</div>
+</div></section>
+
+<section class="section"><div class="card">
+<div class="method">Keyboard: Cut and Paste</div>
+<h2>4. Cut a Phrase</h2>
+<p>Cut the words <b>send an email</b> and paste them into the box.</p>
+<div id="s4" class="source" contenteditable="true">Today I need to send an email before lunch.</div>
+<textarea id="t4" placeholder="Paste the words here."></textarea>
+<button onclick="check(4,'send an email')">Check My Work</button><div id="f4" class="feedback">Use Ctrl + X and Ctrl + V.</div>
+</div></section>
+
+<section class="section"><div class="card">
+<div class="method">Right-Click Menu: Copy and Paste</div>
+<h2>5. Copy with Right-Click</h2>
+<div class="steps"><p>Highlight <b>appointment</b>.</p><p>Right-click the highlighted word.</p><p>Choose <b>Copy</b> from the menu.</p><p>Right-click inside the box and choose <b>Paste</b>.</p></div>
+<div id="s5" class="source" contenteditable="true">appointment</div>
+<textarea id="t5" placeholder="Paste the word here."></textarea>
+<button onclick="check(5,'appointment')">Check My Work</button><div id="f5" class="feedback">Use the right-click menu to copy and paste.</div>
+</div></section>
+
+<section class="section"><div class="card">
+<div class="method">Right-Click Menu: Cut and Paste</div>
+<h2>6. Cut with Right-Click</h2>
+<div class="steps"><p>Highlight <b>phone number</b>.</p><p>Right-click the highlighted words.</p><p>Choose <b>Cut</b>.</p><p>Right-click inside the box and choose <b>Paste</b>.</p></div>
+<div id="s6" class="source" contenteditable="true">Please write down your phone number.</div>
+<textarea id="t6" placeholder="Paste the words here."></textarea>
+<button onclick="check(6,'phone number')">Check My Work</button><div id="f6" class="feedback">Use the right-click menu to cut and paste.</div>
+</div></section>
+
+<section class="section"><div class="card"><div class="method">Right-Click Menu: Copy and Paste</div><h2>7. Copy a Phrase with Right-Click</h2><div class="steps"><p>Highlight <b>open computer lab</b>.</p><p>Right-click the highlighted words.</p><p>Choose <b>Copy</b> from the menu.</p><p>Right-click inside the box and choose <b>Paste</b>.</p></div><div id="s7" class="source" contenteditable="true">The open computer lab is available today.</div><textarea id="t7" placeholder="Paste the words here."></textarea><button onclick="check(7,'open computer lab')">Check My Work</button><div id="f7" class="feedback">Use the right-click menu to copy and paste.</div></div></section>
+<section class="section"><div class="card"><div class="method">Right-Click Menu: Cut and Paste</div><h2>8. Cut a Phrase with Right-Click</h2><div class="steps"><p>Highlight <b>Google Drive</b>.</p><p>Right-click the highlighted words.</p><p>Choose <b>Cut</b>.</p><p>Right-click inside the box and choose <b>Paste</b>.</p></div><div id="s8" class="source" contenteditable="true">Save the document in Google Drive.</div><textarea id="t8" placeholder="Paste the words here."></textarea><button onclick="check(8,'google drive')">Check My Work</button><div id="f8" class="feedback">Use the right-click menu to cut and paste.</div></div></section>
+<section class="section"><div class="card" style="text-align:center">
+<h2>Finished!</h2>
+<p><b>You learned 2 ways to copy, cut, and paste.</b></p>
+
+<div style="text-align:left;max-width:760px;margin:28px auto;">
+  <p><strong>Keyboard</strong></p>
+  <p><b>Copy:</b> <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+  <p><b>Cut:</b> <kbd>Ctrl</kbd> + <kbd>X</kbd></p>
+  <p><b>Paste:</b> <kbd>Ctrl</kbd> + <kbd>V</kbd></p>
+
+  <p style="margin-top:32px;"><strong>Right-Click Menu</strong></p>
+  <p>Highlight the text, then right-click it.</p>
+  <p>Choose <b>Copy</b> or <b>Cut</b> from the menu.</p>
+  <p>Right-click where you want the text to go and choose <b>Paste</b>.</p>
+</div>
+
+<button onclick="resetAll()">Start Over</button>
+</div></section>
+
+<script>
+const originals=["","library","I enjoy my computer class every week.","Tuesday","Today I need to send an email before lunch.","appointment","Please write down your phone number.","The open computer lab is available today.","Save the document in Google Drive."];
+const prompts=["","Copy library and paste it into the box.","Use Ctrl + C and Ctrl + V.","Cut Tuesday and paste it into the box.","Use Ctrl + X and Ctrl + V.","Use the right-click menu to copy and paste.","Use the right-click menu to cut and paste.","Use the right-click menu to copy and paste.","Use the right-click menu to cut and paste."];
+function clean(v){return v.trim().replace(/\s+/g," ").toLowerCase()}
+function check(n,a){document.getElementById("f"+n).textContent=clean(document.getElementById("t"+n).value)===a?"Great! You completed the activity.":"Not quite. Try again."}
+function resetAll(){for(let i=1;i<=8;i++){document.getElementById("s"+i).textContent=originals[i];document.getElementById("t"+i).value="";document.getElementById("f"+i).textContent=prompts[i]}window.getSelection().removeAllRanges();window.scrollTo({top:0,behavior:"smooth"})}
+</script>
+</body></html>
